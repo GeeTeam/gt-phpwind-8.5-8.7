@@ -1,0 +1,57 @@
+<!--<?php
+include_once PrintEot('left');print <<<EOT
+-->
+<div class="mb10"><a href="$admin_file?adminjob=hackcenter">插件中心</a>&raquo; <a href="javascript:;">{$db_hackdb[geetest][0]}</a></div>
+<div class="nav3 mb10">
+	<ul class="cc">
+		<li class="current"><a href="$basename">极验设置</a></li>
+    </ul>
+</div>
+<div class="admin_info mb10">
+	<h3 class="h1">提示信息</h3>
+    <div class="legend">极验设置:可开启关闭极验功能，以及设置极验基本参数</div>
+</div>
+<form action="$basename" method="post">
+	<input type="hidden" name="action" value="unsubmit" />
+	<h2 class="h1">极验参数设置</h2>
+	<div class="admin_table mb10">
+	<table width="100%" cellspacing="0" cellpadding="0">
+		<tr class="tr1 vt">
+			<td class="td1">极验ID</td>
+			<td class="td2"><input class="input input_wb" value="$geetest_config[geetest_id]" name="geetest_config[geetest_id]" /></td>
+			<td class="td2"><div class="help_a">此为极验试用ID，请到<a href="http://www.geetest.com" target="_blank">www.geetest.com</a>重新注册申请！</div></td>
+		</tr>
+		<tr class="tr1 vt">
+			<td class="td1">PRIVATE_KEY</td>
+			<td class="td2"><input class="input input_wb" value="$geetest_config[private_key]" name="geetest_config[private_key]" /></td>
+			<td class="td2"><div class="help_a">此为网站对应的私钥，对应于每个极验ID，请到<a href="http://www.geetest.com" target="_blank">www.geetest.com</a>重新注册申请！</div></td>
+		</tr>		
+		<tr class="tr1 vt">
+			<td class="td1">开启极验验证</td>
+			<td class="td2">
+				<ul class="list_A list_120">
+					<li><input type="checkbox" value="1" name="geetest_config[geetest_pages][register]" $geetest_pages[1] /> 注册</li>
+					<li><input type="checkbox" value="1" name="geetest_config[geetest_pages][login]" $geetest_pages[2] /> 登录</li>
+					<li><input type="checkbox" value="1" name="geetest_config[geetest_pages][post]" $geetest_pages[3] /> 发帖</li>
+				</ul>
+			</td>
+			<td class="td2"><div class="help_a">请勾选需要开启验证码的操作,注册登录不受选择用户组的影响</div></td>
+		</tr>   
+		<tr class="tr1 vt">
+		  <td class="td1">用户组权限</td>
+		  <td class="td2" colspan="2">
+			  <table width="100%" cellspacing="0" cellpadding="0">
+				  <tr>$usergroup</tr>
+			   </table>
+		   </td>
+		</tr>
+	</table>
+</div>
+<div class="mb10 tac">
+    <span class="btn"><span><button type="submit">提 交</button></span></span>
+</div>
+</form>
+<!--
+EOT;
+include_once PrintEot('adminbottom');
+?>-->
